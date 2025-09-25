@@ -1,0 +1,41 @@
+name: Deploy .NET App to EC2
+
+on:
+  push:
+    branches:
+      - main   # deploy whenever main branch changes
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.100-rc.1'
+
+    - name: Publish app
+      run: dotnet publish -c Release -o ./publish
+
+    - name: Copy files to EC2
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        source: "./publish/*"
+        target: "/home/ubuntu/myapp/publish"
+
+    - name: Restart app on EC2
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        script: |
+          pkill -f 'dotnet SimpleNetApp.dll' || true
+          nohup $HOME/dotnet10/dotnet /home/ubuntu/myapp/publish/SimpleNetApp.dll --urls "http://0.0.0.0:5000" > /home/ubuntu/myapp/app.log 2>&1 &
