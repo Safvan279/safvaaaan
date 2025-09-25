@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\safva\\Downloads\\task1\\SimpleNetApp\\SimpleNetApp.csproj": {}
+    "C:\\Users\\safva\\Documents\\GitHub\\safvaaaan\\SimpleNetApp\\SimpleNetApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\safva\\Downloads\\task1\\SimpleNetApp\\SimpleNetApp.csproj": {
+    "C:\\Users\\safva\\Documents\\GitHub\\safvaaaan\\SimpleNetApp\\SimpleNetApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\safva\\Downloads\\task1\\SimpleNetApp\\SimpleNetApp.csproj",
+        "projectUniqueName": "C:\\Users\\safva\\Documents\\GitHub\\safvaaaan\\SimpleNetApp\\SimpleNetApp.csproj",
         "projectName": "SimpleNetApp",
-        "projectPath": "C:\\Users\\safva\\Downloads\\task1\\SimpleNetApp\\SimpleNetApp.csproj",
+        "projectPath": "C:\\Users\\safva\\Documents\\GitHub\\safvaaaan\\SimpleNetApp\\SimpleNetApp.csproj",
         "packagesPath": "C:\\Users\\safva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\safva\\Downloads\\task1\\SimpleNetApp\\obj\\",
+        "outputPath": "C:\\Users\\safva\\Documents\\GitHub\\safvaaaan\\SimpleNetApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\safva\\AppData\\Roaming\\NuGet\\NuGet.Config"
