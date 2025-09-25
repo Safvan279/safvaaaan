@@ -10,33 +10,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2️⃣ Set up .NET
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.100-rc.1'
 
-      # 3️⃣ Publish app
       - name: Publish app
         run: dotnet publish -c Release -o ./publish
 
-      # 4️⃣ Set up SSH
       - name: Start SSH agent
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
-      # 5️⃣ Copy files to EC2
+      - name: Backup current publish
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} \
+          "mv /home/ubuntu/myapp/publish /home/ubuntu/myapp/publish_backup_$(date +%s) || true && mkdir -p /home/ubuntu/myapp/publish"
+
       - name: Copy files to EC2
         run: |
           rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./publish/ ubuntu@${{ secrets.EC2_HOST }}:/home/ubuntu/myapp/publish/
 
-      # 6️⃣ Restart app on EC2
       - name: Restart app on EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} \
           "pkill -f SimpleNetApp.dll || true && $HOME/dotnet10/dotnet /home/ubuntu/myapp/publish/SimpleNetApp.dll --urls 'http://0.0.0.0:5000' &"
+          sleep 5
