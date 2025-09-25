@@ -1,0 +1,27 @@
+@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>About This Application</h3>
+        <p>This is a simple ASP.NET Core web application created for deployment on AWS EC2 instance.</p>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>Technical Details</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Framework:</strong> ASP.NET Core 6.0</li>
+                    <li><strong>Platform:</strong> AWS EC2</li>
+                    <li><strong>Purpose:</strong> Demonstration of .NET deployment on cloud</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

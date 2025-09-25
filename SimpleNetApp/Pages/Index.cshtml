@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to .NET on AWS</h1>
+    <p>Hello from AWS VM!</p>
+    <p><strong>Server Time:</strong> @DateTime.Now</p>
+    <p><strong>Machine Name:</strong> @System.Environment.MachineName</p>
+    
+    <div class="alert alert-success mt-4">
+        <h4>Application Status: Running</h4>
+        <p>This .NET application will be deployed to AWS EC2</p>
+    </div>
+    
+    <div class="mt-4">
+        <a href="/About" class="btn btn-primary">About This App</a>
+        <a href="/Privacy" class="btn btn-secondary">Privacy</a>
+    </div>
+</div>

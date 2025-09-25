@@ -1,0 +1,13 @@
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\SimpleNetApp.exe
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\publish\web.config
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\appsettings.Development.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\appsettings.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\publish\appsettings.Development.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\publish\appsettings.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\publish\SimpleNetApp.deps.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\publish\SimpleNetApp.runtimeconfig.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\publish\SimpleNetApp.staticwebassets.endpoints.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\SimpleNetApp.dll
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\SimpleNetApp.deps.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\SimpleNetApp.runtimeconfig.json
+C:\Users\safva\Downloads\task1\SimpleNetApp\publish\SimpleNetApp.pdb
